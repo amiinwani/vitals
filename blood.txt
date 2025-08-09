@@ -1,1 +1,11 @@
-TBD
+- react flow 
+    - image for each node 
+    - search change image
+
+
+- food  search 
+
+- click food send a request and get info about each food
+
+
+
