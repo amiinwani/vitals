@@ -7,6 +7,7 @@ function maskKey(key) {
   return `${key.slice(0, 8)}...${key.slice(-6)}`;
 }
 
+// Only use environment variable; never hardcode secrets and never log full keys
 const SELECTED_API_KEY = process.env.OPENAI_API_KEY || '';
 console.log('[OpenAI] Configured API key (masked):', maskKey(SELECTED_API_KEY));
 
