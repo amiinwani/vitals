@@ -1,0 +1,203 @@
+- react flow 
+    - image for each node 
+    - search change image
+
+
+- food  search 
+
+- click food send a request and get info about each food
+
+
+
+-  when clsoing the side bar right now it shows a black sppace under it that should not happed - the option for the modes are twisted right now , explore has popular opitona and the other way aroudn as well - when on the expore the open db data should be shown and just like the way it curretnly is without changing anything - EXPOLORE PAGE : - open db food shown the way they are curretly shown - POPLUAR MODE : - foods from the @truefood_products_full.csv shown but the cateogries are not shown on the side bar they are shonw on the canvas and when it is seleted then food from that categroy are shown to shwon clearing all the rest of cateroies with a back button int at the top of the page - then the options on the side bar allow you to filter in both the popluar and explore cases - the search bar should not be in the side bar it should where the explore mode selection curretly right now is and should work in both the cases in for open food food serach and the local food search - on the side bar on the bottom there should be a big upload report butotn which does nothing for now in both popular and explore mode ANLYZE AND UNDERSTAND AND THEN MAKES CHANGES WITHOUT MISSING ANYTHING
+
+
+there are more 
+
+
+
+UI 
+    - SIDE BAR : 
+        search food by name at top (removes teh catetogries and shows the serach results)
+
+        filter by store (walmart)
+        filter by processed or not (proocessad ranking 1-10 ) 
+        filter by price set a maximum price
+        
+        show analysis of the blood report 
+        
+        upload blood report 
+        + history 
+
+        **chat with you blood report switch 
+
+    - UI 
+        - show categories
+            
+        - list of foods in each category 
+
+        - dialog to show deatil about each food 
+
+    
+    - BACKEND 
+        - upolad report, recinve report in the backend 
+        : call to open ai
+            - unique instance json storage 
+                - file location & name of the report
+                - data extracted from the report 
+            - gives text anlysis of the report what is correct what is wrong 
+        : data sent back to frontend and shown on the side bar 
+            - in a visual way  
+
+        - food sorting 
+            - open a category 
+            : show visual loading
+            : call to open ai 
+                - all food labels & data from the report 
+                - make it give it score from 0-2 for each food 
+                - show colour according to those for each food 
+
+                - store with respect to blood report JSON 
+                    *   thsi json is visible as history and can be switched to whenever 
+
+
+
+SHOWING CATEOGORIES AND PRODUCTS IN EACH CATEGORIES 
+    - for the images that are int eh data set 
+
+
+
+---
+
+- make the serach bar functional in the react flow as well for searchinf for a food 
+- when opening to react flow view it is curretly too zoomed out , make it zoomed it 2x what it curertly is, and make it 5 foods per row
+- regarding the price if all the foods have price tthen only show the rice if a price 
+- when clickign on a node in the react flow, one a dialog make a querry with teh name of that good to open food and show the product data from there and show the image that is being shown on the node 
+- cachante the images on th frontend so that they won't have to be fethced again on reload and stuff 
+- f_FPro	The product’s Food Processing Score (FPro) on a scale from 0 to 1. Closer to 1 means more processed. : BASED ON THIS DATA SHOW A PROCESSING RANKING ON OUTSIDE OF THE EACH NODE BY IN A VIAUAL WAY BY A LINE OR SOMETHING 
+- FOR EACH NODE MAKE SURE IT IS MARKED WITH THE STORE AND ITS LOGOG SO THAT IT CAN BE FILTERED 
+- FILTERS SHOULD WORKS ON NODES EASITLY 
+
+- MAKE SURE ALL THE FOODS IN A CATEGORY ARE SHOWN 
+
+ANALYZE AND MAEK CHAGNES AND MAEK SURE NOT TO MISS ANYTING THAT I SAID ABOVBE AND MAKE SURE IT WORKS
+
+CREATE A PLAN BEOFRE MAKING CHANES
+
+--
+
+: DEATAILS ABOUT EACH FOOD
+
+
+
+- ROUTE TO UPLOAD PDF TO THE BACKEND , AS PDF IS RECIEVED, 
+- OPEN AI IS CALLED AND IT GENERATES COCISE JSON ABOUT YOU DATA, FIELDS ARE NOT TO BE PREDIEFIEND BUT IT HAS TO BE A JSON 
+    : A TEST FIELD : PERSONS SCORES ON THOSE TEST FIELDS 
+    : NAME FIELD  : NAME
+    - THESE DON'T HAVE TO BE SAME ACROSS DIFFERENT REPORTS
+- A UNIQUE ID JSON IS CREAED REGARDINT THIS UPLAOD, WHICH CONTAINS, 
+    - INITAL MODEL RESPONSE REGARDIN THE JSON VERSION OF THE REPORT
+    - ALL LATER MODEL REPOSNE BASED ON EACH OF THE CATEGORIES
+
+- WHEN A PERSON CLICKS ON A CATEGORY  IN FRONTEND IN TEH TOP BAR IT SHOWS UPLOAD REPORT FOR MORE ACCURATE ANALYSIS
+- ONCE A PEROSN CLICKS ON A CATEGORY IS BACKEND IS CALLED IF HE HAS ALREADY UPLOADED A REPORT 
+    - NAME OF EACH OF THE FOOD IN A CATEGORY MARKED WITH 1 , 2 , 3 OR SOME KIND OF UQUIE ID  IS MARKED
+    - name of the food and the unuqie is is sent to fronten  and the nodes are loaded in the frontend, 
+    but it shows processing at the top and for each food there are  
+    - and based on the time data from the report and theis new data make the opne ai llm geneate for each food that is sent form the frontend a a scrore from (0 - 1 - 2) whether the eprson should eat it or not 0 = no , 1 = does not matter , 2  this is good for him - a JSON is returned by opne ai 
+    - and based on this json from the backend the cloour of the nodes is changed fore each food : 0 = red , 1 - no colour , 2 = green 
+
+    - while backend is geneating this repsone colour is not changed 
+
+---
+
+When a user clicks on a category in the top bar on the frontend, show “Upload Report for More Accurate Analysis” if no report is uploaded.
+
+Once a user clicks on a category, the backend checks if a report is already uploaded.
+
+Each food item in that category is assigned a unique ID (e.g., 1, 2, 3).
+
+The name and unique ID for each food item are sent to the frontend, and the corresponding nodes are loaded there.
+
+At this stage, a “Processing” indicator is shown at the top, and each food item node is displayed without color.
+
+Using the time data from the report and the new category data, the backend uses the OpenAI LLM to generate a score for each food item:
+
+0 = No (should not eat)
+
+1 = Neutral (doesn’t matter)
+
+2 = Yes (good for them)
+The LLM returns this as a JSON object.
+
+Based on the JSON response:
+
+0 → Red node
+
+1 → No color
+
+2 → Green node
+
+Node colors update only after the backend response is received; they remain unchanged while the backend is processing.
+
+
+
+MAKE THIS WORK IN A SINGLE GO : SEND NAME OF EACH FOOD TO THE LLM AND A UNUQIE ID TO INDEITFY AND TIE THE RESPOEN BACJK USING 
+
+- WHEN A PERSON CLICKS ON A CATEGORY  IN FRONTEND IN TEH TOP BAR IT SHOWS UPLOAD REPORT FOR MORE ACCURATE ANALYSIS
+- ONCE A PEROSN CLICKS ON A CATEGORY IS BACKEND IS CALLED IF HE HAS ALREADY UPLOADED A REPORT 
+    - NAME OF EACH OF THE FOOD IN A CATEGORY MARKED WITH 1 , 2 , 3 OR SOME KIND OF UQUIE ID  IS MARKED
+    - name of the food and the unuqie is is sent to fronten  and the nodes are loaded in the frontend, 
+    but it shows processing at the top and for each food there are  
+    - and based on the time data from the report and theis new data make the opne ai llm geneate for each food that is sent form the frontend a a scrore from (0 - 1 - 2) whether the eprson should eat it or not 0 = no , 1 = does not matter , 2  this is good for him - a JSON is returned by opne ai 
+    - and based on this json from the backend the cloour of the nodes is changed fore each food : 0 = red , 1 - no colour , 2 = green 
+
+    - while backend is geneating this repsone colour is not changed 
+
+IMRPOVE THIS POMMPT WITHOTU CHANGIGN ANYTING 
+
+JUT SAY BETTER. 
+
+
+- WHEN A PERSON OPENS A FOOD CATERGORY AND HE IS HAS NOT UPLOADED A A REPORT AND HAS NOT GOTTEN BACK A FOOD OVERVIEW IT SHOULD SHOW IN TOP BAR UPLOAD A REPORT TO GET BETTER ANALYSIS 
+- IF A PERSON HAS ALREADY UPLOADED A BLOOD REPORT : TAKE THE ID FROM THE BLOOD REPORT 
+    - CREATE A NEW ROUTE IN THE BACKEND AND CALL IN IN THIS CASE, HERE IS WHAT SHOULD HAPPEN WITH THAT 
+    - ALL THE FOOD IN THIS CATEGORU SHOULD BE FOWAREDED TO THE BACKEND WIHT A UNIQUIE ID , VIA THIS ROUTE 
+    - BACKEND SHOULD CALL THE OPNE AI API IN THE FOLLOWING MANNER 
+        - THE FOOD AND UNIQUE IDENTIFIER FOR EACH FOOD IT CAN BE A NUMBER OR WHATEVER 
+        - THE BLOOD REPORT OF THE PERSON WHICH IS IDETIFEID USING THE UNIQUE ID NUMBER 
+        - AND THE PROMPT WHICH SAYS SOMETHING LIKE : BASED ON THE PROVEDED BLOOD REPORT GIVE EACH FOOD  A MARK FROM (0 , 1 ,  2) O BEING BASED ON THE BLOOD REPORT THIS PERSONS SHOULD NOT EAT THIS , 1 BEING BASED ON THE BLOOD REPORT THIS DOES NOT EFFECT HIM NEGATIVELY , 2 BASED ONT EH BLOOD MARKERS THIS WOULD IMPROVE THE PERSONS BLOOD REPORT 
+        - MAKE THE MODEL OUTPUT THE REPOSEN IN JOSN 
+        - DURING THIS TIME SHOW PROCESSIGN DATA IN THE FRONTEND 
+        - ONCE THE LLLM REPOSEN IS RECIEVED SAVE IT IN THE JSON, MARKED WITH THE USERS ID 
+        - AND FORWARD IT TO FORNTEND 
+    - BASED ON TEH NUMBERING FOR EACH FOOD FOOD NODE A COLOUR 0 - RED , 1 - NO COLOUR , 2 - RED : THIS CLOUR SHOULD FILL THE NODE
+
+- IF THE SAME CATEGORY IS OPNED AGAIN FOR THE GIVEN ID, SHOW THE DATA FROM THE JSON INSTEAD OF THE GENERATEING AGAIN 
+
+DO ALL OF THIS IN A SINGLE GO AND  DON'T ISS ANYTHING AND MAEK SURE IT WORKS 
+
+
+
+- WHEN A PERSON OPENS A FOOD CATERGORY AND HE IS HAS NOT UPLOADED A A REPORT AND HAS NOT GOTTEN BACK A FOOD OVERVIEW IT SHOULD SHOW IN TOP BAR UPLOAD A REPORT TO GET BETTER ANALYSIS
+- IF A PERSON HAS ALREADY UPLOADED A BLOOD REPORT : TAKE THE ID FROM THE BLOOD REPORT
+    - CREATE A NEW ROUTE IN THE BACKEND AND CALL IN IN THIS CASE, HERE IS WHAT SHOULD HAPPEN WITH THAT
+    - ALL THE FOOD IN THIS CATEGORU SHOULD BE FOWAREDED TO THE BACKEND WIHT A UNIQUIE ID , VIA THIS ROUTE
+    - BACKEND SHOULD CALL THE OPNE AI API IN THE FOLLOWING MANNER
+        - THE FOOD AND UNIQUE IDENTIFIER FOR EACH FOOD IT CAN BE A NUMBER OR WHATEVER
+        - THE BLOOD REPORT OF THE PERSON WHICH IS IDETIFEID USING THE UNIQUE ID NUMBER
+        - AND THE PROMPT WHICH SAYS SOMETHING LIKE : BASED ON THE PROVEDED BLOOD REPORT GIVE EACH FOOD A MARK FROM (0 , 1 , 2) O BEING BASED ON THE BLOOD REPORT THIS PERSONS SHOULD NOT EAT THIS , 1 BEING BASED ON THE BLOOD REPORT THIS DOES NOT EFFECT HIM NEGATIVELY , 2 BASED ONT EH BLOOD MARKERS THIS WOULD IMPROVE THE PERSONS BLOOD REPORT
+        - MAKE THE MODEL OUTPUT THE REPOSEN IN JOSN
+        - DURING THIS TIME SHOW PROCESSIGN DATA IN THE FRONTEND
+        - ONCE THE LLLM REPOSEN IS RECIEVED SAVE IT IN THE JSON, MARKED WITH THE USERS ID
+        - AND FORWARD IT TO FORNTEND
+    - BASED ON TEH NUMBERING FOR EACH FOOD FOOD NODE A COLOUR 0 - RED , 1 - NO COLOUR , 2 - RED : THIS CLOUR SHOULD FILL THE NODE
+- IF THE SAME CATEGORY IS OPNED AGAIN FOR THE GIVEN ID, SHOW THE DATA FROM THE JSON INSTEAD OF THE GENERATEING AGAIN
+
+DO ALL OF THIS IN A SINGLE GO AND  DON'T ISS ANYTHING AND MAEK SURE IT WORKS
+
+@DATABASE/ 
+
+make sure this works and test it before hand & fill in the gaps yourself for my prompt 
+
+anlzye and then go and make changes 

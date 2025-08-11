@@ -1,0 +1,129 @@
+{
+  "name": "84c214c4-6e32-47e9-b775-96a9c4ab270a.json",
+  "id": "84c214c4-6e32-47e9-b775-96a9c4ab270a",
+  "createdAt": "2025-08-11T02:43:08.192Z",
+  "pdf": {
+    "filename": "1754880161337-803949205-smaple_blood_report_.pdf",
+    "url": "http://localhost:5002/uploads/1754880161337-803949205-smaple_blood_report_.pdf",
+    "size": 6908257,
+    "mimetype": "application/pdf"
+  },
+  "data": {
+    "patient_info": {
+      "name": "Lyubochka Svetka",
+      "sex": "Male",
+      "age": 41,
+      "dob": "01-Feb-1982",
+      "lab_id": "02232160XXXX",
+      "client_name": "Sterling Accuris Buddy",
+      "sample_collected_at": "non SAWPL",
+      "sample_collected_on": "20-Feb-2023 08:53"
+    },
+    "complete_blood_count": {
+      "hemoglobin_g_dL": 14.5,
+      "rbc_count_million_per_cmm": 4.79,
+      "hematocrit_percent": 43.3,
+      "mcv_fL": 90.3,
+      "mch_pg": 30.2,
+      "mchc_g_dL": 33.4,
+      "rdw_cv_percent": 13.6,
+      "wbc_count_per_cmm": 10570,
+      "neutrophils_percent": 73,
+      "lymphocytes_percent": 19,
+      "eosinophils_percent": 2,
+      "monocytes_percent": 6,
+      "basophils_percent": 0,
+      "platelet_count_per_cmm": 150000,
+      "mpv_fL": 14,
+      "rbc_morphology": "Normochromic Normocytic",
+      "wbc_morphology": "Normal",
+      "platelets_morphology": "Adequate normal morphology",
+      "malarial_parasite": "Not detected",
+      "esr_mm_per_hr": 7
+    },
+    "blood_group": {
+      "abo_type": "A",
+      "rh_d_type": "Positive"
+    },
+    "lipid_profile": {
+      "cholesterol_mg_dL": 189,
+      "triglyceride_mg_dL": 168,
+      "hdl_cholesterol_mg_dL": 60,
+      "direct_ldl_mg_dL": 100.39,
+      "vldl_mg_dL": 33.6,
+      "chol_hdl_ratio": 3.1,
+      "ldl_hdl_ratio": 1.7
+    },
+    "biochemistry": {
+      "fasting_blood_sugar_mg_dL": 141,
+      "microalbumin_mg_L": 10.5,
+      "total_protein_g_dL": 7,
+      "albumin_g_dL": 4.2,
+      "globulin_g_dL": 2.8,
+      "a_g_ratio": 1.5,
+      "total_bilirubin_mg_dL": 0.7,
+      "conjugated_bilirubin_mg_dL": 0.3,
+      "unconjugated_bilirubin_mg_dL": 0.2,
+      "delta_bilirubin_mg_dL": 0.2,
+      "creatinine_serum_mg_dL": 0.83,
+      "urea_mg_dL": 18,
+      "blood_urea_nitrogen_mg_dL": 8.41,
+      "uric_acid_mg_dL": 4.9,
+      "calcium_mg_dL": 9.1,
+      "sgpt_u_L": 48,
+      "sgot_u_L": 27,
+      "sodium_mmol_L": 143,
+      "potassium_mmol_L": 4.9,
+      "chloride_mmol_L": 105
+    },
+    "hba1c": {
+      "percent": 7.1,
+      "mean_blood_glucose_mg_dL": 157.07
+    },
+    "thyroid_function_test": {
+      "t3_ng_mL": 1.01,
+      "t4_mg_mL": 7.84,
+      "tsh_microIU_mL": 0.8199
+    },
+    "iron_studies": {
+      "iron_micro_g_dL": 103,
+      "tibc": 352,
+      "transferrin_saturation_percent": 29.26
+    },
+    "immunoassay": {
+      "homocysteine_serum_micromol_L": 23.86,
+      "vitamin_d_25_oh_ng_mL": 8.98,
+      "vitamin_b12_pg_mL": "<148",
+      "psa_total_ng_mL": 0.573,
+      "ige_IU_mL": 492.3,
+      "hiv_I_and_II_Ag_with_P24Ag_SCo": 0.07,
+      "hbsAg_SCo": 0.29
+    },
+    "hemoglobin_electrophoresis_hplc": {
+      "hb_a_percent": 84.4,
+      "hb_a2_percent": 2.8,
+      "p2_peak_percent": 5.5,
+      "p3_peak_percent": 5.2,
+      "foetal_hb_percent": 0.3,
+      "interpretation": "Negative for typical beta thalassemia trait"
+    },
+    "urine_analysis": {
+      "color": "Pale Yellow",
+      "clarity": "Clear",
+      "ph": 6,
+      "specific_gravity": 1.03,
+      "urine_glucose": "Present (+)",
+      "urine_protein": "Absent",
+      "bilirubin": "Absent",
+      "urobilinogen": "Absent",
+      "urine_ketone": "Absent",
+      "nitrite": "Absent",
+      "pus_cells": "1-2",
+      "red_cells_per_hpf": "Nil",
+      "epithelial_cells_per_hpf": "1-2",
+      "casts": "Absent",
+      "crystals": "Absent",
+      "amorphous_material": "Absent"
+    }
+  }
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueFood Image CDN Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .image-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #fafafa;
+        }
+        .image-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background-color: white;
+        }
+        .image-item h3 {
+            margin: 10px 0 5px 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .image-item p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .store {
+            background-color: #007bff;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .url {
+            font-size: 11px;
+            color: #888;
+            word-break: break-all;
+        }
+        .loading-status {
+            margin-top: 10px;
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .loaded {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .failed {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+            <div class="container">
+        <h1>TrueFood Image Proxy Test</h1>
+        <p>Testing image URLs from truefood_products_full.csv via local proxy server to bypass CORS restrictions.</p>
+        <div id="server-status" style="padding: 10px; margin: 10px 0; border-radius: 4px; font-weight: bold;">
+            🔄 Checking proxy server status...
+        </div>
+        
+        <div class="image-grid">
+            <!-- Target Store Images -->
+            <div class="image-item">
+                <span class="store">Target</span>
+                <h3>Turkey Pepperoni Slices - 5oz - Market Pantry™</h3>
+                <img src="http://localhost:3001/proxy-image/Target/tg_53140726" alt="Turkey Pepperoni Slices" onload="markAsLoaded(this)" onerror="markAsFailed(this)">
+                <p class="url">Proxy: http://localhost:3001/proxy-image/Target/tg_53140726</p>
+                <div class="loading-status">Loading...</div>
+            </div>
+
+            <div class="image-item">
+                <span class="store">WholeFoods</span>
+                <h3>Three Cheese Gourmet Pizza, 24 oz</h3>
+                <img src="http://localhost:3001/proxy-image/WholeFoods/wf_against-the-grain-three-cheese-gourmet-pizza-24-oz-b018o4u620" alt="Three Cheese Gourmet Pizza" onload="markAsLoaded(this)" onerror="markAsFailed(this)">
+                <p class="url">Proxy: http://localhost:3001/proxy-image/WholeFoods/wf_against-the-grain-three-cheese-gourmet-pizza-24-oz-b018o4u620</p>
+                <div class="loading-status">Loading...</div>
+            </div>
+
+            <div class="image-item">
+                <span class="store">Target</span>
+                <h3>Pizza Corner Taco Frozen Pizza - 31.5oz</h3>
+                <img src="http://localhost:3001/proxy-image/Target/tg_47105634" alt="Pizza Corner Taco Frozen Pizza" onload="markAsLoaded(this)" onerror="markAsFailed(this)">
+                <p class="url">Proxy: http://localhost:3001/proxy-image/Target/tg_47105634</p>
+                <div class="loading-status">Loading...</div>
+            </div>
+
+            <div class="image-item">
+                <span class="store">WholeFoods</span>
+                <h3>Margherita Pizza, 10.9 oz</h3>
+                <img src="http://localhost:3001/proxy-image/WholeFoods/wf_caulipower-margherita-pizza-109-oz-b0747pmsvj" alt="Margherita Pizza" onload="markAsLoaded(this)" onerror="markAsFailed(this)">
+                <p class="url">Proxy: http://localhost:3001/proxy-image/WholeFoods/wf_caulipower-margherita-pizza-109-oz-b0747pmsvj</p>
+                <div class="loading-status">Loading...</div>
+            </div>
+
+            <div class="image-item">
+                <span class="store">Walmart</span>
+                <h3>Gino's East of Chicago Authentic Deep Dish Pizza Cheese</h3>
+                <img src="http://localhost:3001/proxy-image/Walmart/wm_19400275" alt="Gino's East Deep Dish Pizza" onload="markAsLoaded(this)" onerror="markAsFailed(this)">
+                <p class="url">Proxy: http://localhost:3001/proxy-image/Walmart/wm_19400275</p>
+                <div class="loading-status">Loading...</div>
+            </div>
+
+            <div class="image-item">
+                <span class="store">Target</span>
+                <h3>DiGiorno Thin Crispy Crust Pepperoni Frozen Pizza - 8.4oz</h3>
+                <img src="http://localhost:3001/proxy-image/Target/tg_13429196" alt="DiGiorno Pepperoni Pizza" onload="markAsLoaded(this)" onerror="markAsFailed(this)">
+                <p class="url">Proxy: http://localhost:3001/proxy-image/Target/tg_13429196</p>
+                <div class="loading-status">Loading...</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background-color: #e9ecef; border-radius: 8px;">
+            <h3>How to Run This Test</h3>
+            <ol>
+                <li><strong>Install dependencies:</strong> <code>npm install</code></li>
+                <li><strong>Start proxy server:</strong> <code>npm start</code></li>
+                <li><strong>Open this page:</strong> <code>http://localhost:3001</code></li>
+            </ol>
+            <h3>Test Results Summary</h3>
+            <ul>
+                <li><strong>Green status:</strong> Image loaded successfully via proxy</li>
+                <li><strong>Red status:</strong> Image failed to load or proxy server not running</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function markAsLoaded(img) {
+            const statusDiv = img.parentElement.querySelector('.loading-status');
+            statusDiv.textContent = '✅ Image loaded successfully via proxy';
+            statusDiv.className = 'loading-status loaded';
+        }
+
+        function markAsFailed(img) {
+            const statusDiv = img.parentElement.querySelector('.loading-status');
+            statusDiv.textContent = '❌ Failed to load image (check proxy server)';
+            statusDiv.className = 'loading-status failed';
+        }
+
+        // Check if proxy server is running
+        async function checkProxyServer() {
+            const statusDiv = document.getElementById('server-status');
+            try {
+                const response = await fetch('http://localhost:3001/health');
+                if (response.ok) {
+                    statusDiv.textContent = '✅ Proxy server is running on localhost:3001';
+                    statusDiv.style.backgroundColor = '#d4edda';
+                    statusDiv.style.color = '#155724';
+                } else {
+                    throw new Error('Server not responding');
+                }
+            } catch (error) {
+                statusDiv.textContent = '❌ Proxy server not running! Run: npm start';
+                statusDiv.style.backgroundColor = '#f8d7da';
+                statusDiv.style.color = '#721c24';
+            }
+        }
+
+        // Check proxy server status on page load
+        checkProxyServer();
+
+        // Set a timeout to catch any images that are still loading
+        setTimeout(() => {
+            const loadingStatuses = document.querySelectorAll('.loading-status');
+            loadingStatuses.forEach(status => {
+                if (status.textContent === 'Loading...') {
+                    status.textContent = '⏱️ Timeout - Check proxy server';
+                    status.className = 'loading-status failed';
+                }
+            });
+        }, 10000); // 10 second timeout
+    </script>
+</body>
+</html>
