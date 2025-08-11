@@ -1,0 +1,9 @@
+# Project-local ignores
+.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.cache_ggshield
+# Prevent accidental inclusion of large/raw inputs besides committed samples
+input_files/*.tmp

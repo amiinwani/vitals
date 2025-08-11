@@ -1,0 +1,115 @@
+{
+  "name": "cc7db8a4-72e7-4fd8-bbdf-f65df62bdfa5.json",
+  "id": "cc7db8a4-72e7-4fd8-bbdf-f65df62bdfa5",
+  "createdAt": "2025-08-11T02:24:23.780Z",
+  "pdf": {
+    "filename": "1754879054712-501536963-sample_lab_report_part2.pdf",
+    "url": "http://localhost:5002/uploads/1754879054712-501536963-sample_lab_report_part2.pdf",
+    "size": 2993,
+    "mimetype": "application/pdf"
+  },
+  "data": {
+    "patient_name": "John Doe",
+    "date_of_birth": "2008-05-12",
+    "sex": "Male",
+    "collection_date": "2025-08-07",
+    "lab_name": "Example Diagnostics",
+    "test_results": {
+      "ALT": {
+        "value": 35.5,
+        "unit": "U/L",
+        "reference_range": "0 - 40"
+      },
+      "AST": {
+        "value": 24.9,
+        "unit": "U/L",
+        "reference_range": "0 - 40"
+      },
+      "ALP": {
+        "value": 98,
+        "unit": "U/L",
+        "reference_range": "44 - 147"
+      },
+      "GGT": {
+        "value": 42.7,
+        "unit": "U/L",
+        "reference_range": "0 - 51"
+      },
+      "Bilirubin_total": {
+        "value": 0.9,
+        "unit": "mg/dL",
+        "reference_range": "0.1 - 1.2"
+      },
+      "Albumin": {
+        "value": 4,
+        "unit": "g/dL",
+        "reference_range": "3.5 - 5.0"
+      },
+      "hs_CRP": {
+        "value": 4.4,
+        "unit": "mg/L",
+        "reference_range": "0 - 3"
+      },
+      "Vitamin_D_25(OH)": {
+        "value": 38.5,
+        "unit": "ng/mL",
+        "reference_range": "30 - 100"
+      },
+      "Vitamin_B12": {
+        "value": 270,
+        "unit": "pg/mL",
+        "reference_range": "200 - 900"
+      },
+      "Folate": {
+        "value": 12.9,
+        "unit": "ng/mL",
+        "reference_range": "2.7 - 17"
+      },
+      "Magnesium": {
+        "value": 2.3,
+        "unit": "mg/dL",
+        "reference_range": "1.7 - 2.3"
+      },
+      "Uric_Acid": {
+        "value": 7.3,
+        "unit": "mg/dL",
+        "reference_range": "3.5 - 7.0"
+      },
+      "TSH": {
+        "value": 1.5,
+        "unit": "µIU/mL",
+        "reference_range": "0.4 - 4.5"
+      },
+      "Free_T4": {
+        "value": 1.7,
+        "unit": "ng/dL",
+        "reference_range": "0.8 - 1.8"
+      },
+      "Free_T3": {
+        "value": 3.4,
+        "unit": "pg/mL",
+        "reference_range": "2.3 - 4.2"
+      },
+      "Calcium": {
+        "value": 8.7,
+        "unit": "mg/dL",
+        "reference_range": "8.5 - 10.2"
+      },
+      "Total_Protein": {
+        "value": 7.7,
+        "unit": "g/dL",
+        "reference_range": "6.0 - 8.3"
+      },
+      "CO2": {
+        "value": 27,
+        "unit": "mmol/L",
+        "reference_range": "21 - 29"
+      },
+      "Chloride": {
+        "value": 102,
+        "unit": "mmol/L",
+        "reference_range": "96 - 106"
+      }
+    }
+  }
+}
